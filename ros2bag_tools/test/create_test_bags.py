@@ -17,7 +17,7 @@ from diagnostic_msgs.msg import DiagnosticArray
 from example_interfaces.msg import String
 
 from rclpy.serialization import serialize_message
-from rclpy.time import CONVERSION_CONSTANT
+CONVERSION_CONSTANT = 10 ** 9
 from rclpy.time import Time
 
 from ros2bag_tools.filter import BagMessageTuple
