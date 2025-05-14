@@ -21,7 +21,7 @@ from datetime import timezone
 
 import pytest
 
-from rclpy.time import CONVERSION_CONSTANT
+CONVERSION_CONSTANT = 10 ** 9
 
 from ros2bag_tools.time import add_daytime
 from ros2bag_tools.time import datetime_to_ros_time
