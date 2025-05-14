@@ -21,7 +21,7 @@ from datetime import timezone
 import re
 from typing import Sequence, Tuple, Union
 
-from rclpy.time import CONVERSION_CONSTANT
+CONVERSION_CONSTANT = 10 ** 9
 from rclpy.time import Duration
 from rclpy.time import Time
 from rosbag2_py import BagMetadata
