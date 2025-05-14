@@ -149,9 +149,12 @@ class CutFilter(FilterExtension):
         for metadata in metadatas:
             for topic in metadata.topics_with_message_count:
                 durability = QoSDurabilityPolicy.SYSTEM_DEFAULT
-                if topic.topic_metadata.offered_qos_profiles.strip():
-                    durability = yaml.safe_load(topic.topic_metadata.offered_qos_profiles)[
-                        0]['durability']
+                try:
+                    if topic.topic_metadata.offered_qos_profiles.strip():
+                        durability = yaml.safe_load(topic.topic_metadata.offered_qos_profiles)[
+                            0]['durability']
+                except Exception as e:
+                    pass
                 self._topic_qos_durability_dict[topic.topic_metadata.name] = durability
 
     def output_size_factor(self, metadata):
