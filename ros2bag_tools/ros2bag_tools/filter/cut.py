@@ -154,7 +154,8 @@ class CutFilter(FilterExtension):
                         durability = yaml.safe_load(topic.topic_metadata.offered_qos_profiles)[
                             0]['durability']
                 except Exception as e:
-                    pass
+                    self._logger.warning(
+                        f'unable to retrieve offered_qos_profiles: use system default instead')
                 self._topic_qos_durability_dict[topic.topic_metadata.name] = durability
 
     def output_size_factor(self, metadata):
